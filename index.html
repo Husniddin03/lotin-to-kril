@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lotindan Krilga</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      .copytext:active,
+      .textEdit:active {
+        color: aqua !important;
+        border-radius: 50%;
+      }
+      .copytext:focus,
+      .textEdit:focus {
+        border-radius: 50%;
+        box-shadow: 0 0 5px 0 aqua;
+      }
+      .soya {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1),
+          0px 6px 15px rgba(50, 50, 93, 0.15),
+          0px 9px 20px rgba(72, 72, 72, 0.2);
+        padding: 40px;
+        background-color: black;
+      }
+      .ism {
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px darkgrey;
+      }
+      textarea {
+        box-shadow: 0 0 10px 0 darkgrey;
+      }
+      ul {
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        width: 100%;
+      }
+      .footer-section {
+        background: #151414;
+        position: relative;
+        margin-top: 40px;
+      }
+      .footer-cta {
+        border-bottom: 1px solid #373636;
+      }
+      .single-cta i {
+        color: #ff5e14;
+        font-size: 30px;
+        float: left;
+        margin-top: 8px;
+      }
+      .cta-text {
+        padding-left: 15px;
+        display: inline-block;
+      }
+      .cta-text h4 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .cta-text span {
+        color: #757575;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="soya">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-white align-iems-center rounded">
+          <div
+            class="container-fluid col d-flex justify-content-evenly align-iems-center"
+          >
+            <span id="left" class="fs-3 text-danger">Lotin</span>
+            <button
+              onclick="replacement()"
+              class="navbar-brand btn text-primary"
+            >
+              <span>
+                <i class="bi bi-arrow-left-right"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="currentColor"
+                  class="bi bi-arrow-left-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"
+                  />
+                </svg>
+              </span>
+            </button>
+            <span id="right" class="fs-3 text-primary">Kril</span>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mt-5 row m-0 d-flex justify-content-evenly">
+      <div class="col-10 col-md-5">
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder="Enter text"
+            id="textarea1"
+            style="height: 300px"
+          ></textarea>
+          <label for="floatingTextarea2" id="top">Lotin</label>
+        </div>
+
+        <div class="text-end mt-2">
+          <button
+            onclick="textEdit(1,-1)"
+            id="left1"
+            class="textEdit text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-text-left"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-text-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="textEdit(1,0)"
+            id="center1"
+            class="textEdit text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-text-center"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-text-center"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="textEdit(1,2)"
+            id="rigth1"
+            class="textEdit text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-text-right"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-text-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="copy(1)"
+            id="copyButton1"
+            class="text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-copy"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-copy"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-10 mt-3 mt-md-0 col-md-5">
+        <div class="form-floating">
+          <textarea
+            disabled
+            class="form-control"
+            placeholder="Enter text"
+            id="textarea2"
+            style="height: 300px"
+          ></textarea>
+          <label for="floatingTextarea2" id="low">Kril</label>
+        </div>
+
+        <div class="text-end mt-2">
+          <button
+            onclick="textEdit(2,-1)"
+            id="left2"
+            class="textEdit text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-text-left"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-text-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="textEdit(2,0)"
+            id="center2"
+            class="textEdit text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-text-center"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-text-center"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="textEdit(2,2)"
+            id="rigth2"
+            class="textEdit text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-text-right"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-text-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="copy(2)"
+            id="copyButton2"
+            class="text-secondary border border-0 bg-white copytext"
+          >
+            <i class="bi bi-copy"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-copy"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-cta pt-5 pb-5">
+          <div class="row">
+            <div class="col-xl-3 col-md-3 mb-30">
+              <div class="single-cta">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="cta-text">
+                  <h4>Find us</h4>
+                  <span>TATU, Samarqand, Uzbekistan</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-3 mb-30">
+              <div class="single-cta">
+                <i class="fas fa-phone"></i>
+                <div class="cta-text">
+                  <h4>Call us</h4>
+                  <span>+998 (88) 613 12 13</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-3 mb-30">
+              <div class="single-cta">
+                <i class="far fa-envelope-open"></i>
+                <div class="cta-text">
+                  <h4>Mail us</h4>
+                  <span>husniddin13124041@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-3 mb-30">
+              <div class="single-cta">
+                <i class="far fa-envelope-open"></i>
+                <div class="cta-text">
+                  <h4>Full name</h4>
+                  <span>Husniddin G'afforov</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function textEdit(number, position) {
+        switch (position) {
+          case -1:
+            position = 'left'
+            break
+          case 0:
+            position = 'center'
+            break
+          case 2:
+            position = 'right'
+            break
+        }
+        document.getElementById('textarea' + number).style.textAlign = position
+      }
+
+      function replacement() {
+        let box
+        box = document.getElementById('left').textContent
+        document.getElementById('left').textContent =
+          document.getElementById('right').textContent
+        document.getElementById('right').textContent = box
+        document.getElementById('top').textContent =
+          document.getElementById('left').textContent
+        document.getElementById('low').textContent =
+          document.getElementById('right').textContent
+      }
+
+      function copy(i) {
+        const copyButton = document.getElementById('copyButton' + i)
+        copyButton.addEventListener('click', function () {
+          const textToCopy = document.getElementById('textarea' + i).value
+
+          const textArea = document.createElement('textarea')
+          textArea.value = textToCopy
+          document.body.appendChild(textArea)
+
+          textArea.select()
+          document.execCommand('copy')
+
+          document.body.removeChild(textArea)
+        })
+      }
+
+      const kril = 'АБВГДЖЗИЙКЛМНОПРСТУФХЭЎҚҲҲ '
+      const krilLower = 'абвгджзийклмнопрстуфхэўқҳҳъ'
+      const krilHelpers = 'ЕЁЦЮЯЧШҒҒҒЎЎЎ'
+      const krilHelpersLower = 'еёцюячшғғғўўў'
+      const lotin = 'ABVGDJZIYKLMNOPRSTUFXEUQXH '
+      const lotinLower = 'abvgdjziyklmnoprstufxeuqxh'
+      const lotinHelpers = [
+        'YE',
+        'YO',
+        'TS',
+        'YU',
+        'YA',
+        'CH',
+        'SH',
+        "G'",
+        'G\ʼ',
+        'G\‘',
+        "O'",
+        'O\ʼ',
+        'O\‘'
+      ]
+      const lotinHelpersLower = [
+        'ye',
+        'yo',
+        'ts',
+        'yu',
+        'ya',
+        'ch',
+        'sh',
+        "g'",
+        'g\ʼ',
+        'g\‘',
+        "o'",
+        'o\ʼ',
+        'o\‘'
+      ]
+      const lotinHelpersLower1 = [
+        'Ye',
+        'Yo',
+        'Ts',
+        'Yu',
+        'Ya',
+        'Ch',
+        'Sh',
+        "G'",
+        'G\ʼ',
+        'G\‘',
+        "O'",
+        'O\ʼ',
+        'O\‘'
+      ]
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const textarea1 = document.getElementById('textarea1')
+        const textarea2 = document.getElementById('textarea2')
+
+        textarea1.addEventListener('input', function () {
+          let text = ''
+
+          if (document.getElementById('top').textContent == 'Lotin') {
+            for (var i = 0; i < textarea1.value.length; i++) {
+              if (
+                lotinHelpers.indexOf(
+                  textarea1.value[i] + textarea1.value[i + 1]
+                ) != -1
+              ) {
+                text +=
+                  krilHelpers[
+                    lotinHelpers.indexOf(
+                      textarea1.value[i] + textarea1.value[i + 1]
+                    )
+                  ]
+              } else if (
+                lotinHelpersLower.indexOf(
+                  textarea1.value[i] + textarea1.value[i + 1]
+                ) != -1
+              ) {
+                text +=
+                  krilHelpersLower[
+                    lotinHelpersLower.indexOf(
+                      textarea1.value[i] + textarea1.value[i + 1]
+                    )
+                  ]
+              } else if (
+                lotinHelpersLower1.indexOf(
+                  textarea1.value[i] + textarea1.value[i + 1]
+                ) != -1
+              ) {
+                text +=
+                  krilHelpersLower[
+                    lotinHelpersLower1.indexOf(
+                      textarea1.value[i] + textarea1.value[i + 1]
+                    )
+                  ]
+              } else if (lotin.indexOf(textarea1.value[i]) != -1) {
+                if (
+                  lotinHelpers.indexOf(
+                    textarea1.value[i - 1] + textarea1.value[i]
+                  ) != -1 ||
+                  lotinHelpersLower.indexOf(
+                    textarea1.value[i - 1] + textarea1.value[i]
+                  ) != -1 ||
+                  lotinHelpersLower1.indexOf(
+                    textarea1.value[i - 1] + textarea1.value[i]
+                  ) != -1
+                ) {
+                } else {
+                  text += kril[lotin.indexOf(textarea1.value[i])]
+                }
+              } else if (lotinLower.indexOf(textarea1.value[i]) != -1) {
+                if (
+                  lotinHelpers.indexOf(
+                    textarea1.value[i - 1] + textarea1.value[i]
+                  ) != -1 ||
+                  lotinHelpersLower.indexOf(
+                    textarea1.value[i - 1] + textarea1.value[i]
+                  ) != -1 ||
+                  lotinHelpersLower1.indexOf(
+                    textarea1.value[i - 1] + textarea1.value[i]
+                  ) != -1
+                ) {
+                } else {
+                  text += krilLower[lotinLower.indexOf(textarea1.value[i])]
+                }
+              } else {
+                text += textarea1.value[i]
+              }
+            }
+          } else {
+            for (var i = 0; i < textarea1.value.length; i++) {
+              if (kril.indexOf(textarea1.value[i]) != -1) {
+                text += lotin[kril.indexOf(textarea1.value[i])]
+              } else if (krilLower.indexOf(textarea1.value[i]) != -1) {
+                text += lotinLower[krilLower.indexOf(textarea1.value[i])]
+              } else if (krilHelpers.indexOf(textarea1.value[i]) != -1) {
+                text += lotinHelpers[krilHelpers.indexOf(textarea1.value[i])]
+              } else if (krilHelpersLower.indexOf(textarea1.value[i]) != -1) {
+                text +=
+                  lotinHelpersLower1[
+                    krilHelpersLower.indexOf(textarea1.value[i])
+                  ]
+              } else {
+                text += textarea1.value[i]
+              }
+            }
+          }
+          textarea2.value = text
+        })
+      })
+    </script>
+  </body>
+</html>
